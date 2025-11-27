@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Troubleshooting Guide - Technical Support | LiTong Group</title>
+    <meta name="description" content="Comprehensive troubleshooting guide for Fuji Electric power semiconductors. Diagnose and resolve common issues with IGBT modules, IPM, and PIM.">
+    <meta name="keywords" content="troubleshooting, Fuji Electric, IGBT troubleshooting, IPM troubleshooting, power semiconductor issues">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="../../../css/style.css">
+    <link rel="canonical" href="https://fuji.elec-distributor.com/support/troubleshooting/">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Troubleshooting Guide - Technical Support",
+        "description": "Comprehensive troubleshooting guide for Fuji Electric power semiconductors",
+        "url": "https://fuji.elec-distributor.com/support/troubleshooting/"
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>LiTong Group</h1>
+                <p>Authorized Fuji Electric Distributor</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="../../../products/index.html">Products</a></li>
+                    <li><a href="../../../solutions/index.html">Solutions</a></li>
+                    <li><a href="../../index.html">Support</a></li>
+                    <li><a href="../index.html">Application Notes</a></li>
+                    <li><a href="index.html" class="active">Troubleshooting</a></li>
+                    <li><a href="../../../news/index.html">News</a></li>
+                    <li><a href="../../../about/index.html">About Us</a></li>
+                    <li><a href="../../../contact/index.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="contact-panel">
+                <div class="contact-item">
+                    <span class="icon">🛒</span>
+                    <a href="../../../inquiry.html" style="color: #333; text-decoration: none;">
+                        Inquiry List 
+                        <span id="inquiry-count" class="inquiry-count">0</span>
+                    </a>
+                </div>
+                <div class="contact-item">
+                    <span class="icon">📱</span>
+                    <span>WhatsApp: +86 15013702378</span>
+                </div>
+                <div class="contact-item">
+                    <span class="icon">💬</span>
+                    <span>WeChat: +86 18612518271</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="../../../index.html">Home</a> > 
+                    <a href="../../index.html">Support</a> > 
+                    <a href="../index.html">Application Notes</a> > 
+                    <span>Troubleshooting</span>
+                </div>
+                <h1>Power Semiconductor Troubleshooting Guide</h1>
+                <p>Comprehensive guide to diagnose and resolve common issues with Fuji Electric products</p>
+            </div>
+        </section>
+
+        <section class="troubleshooting-overview">
+            <div class="container">
+                <div class="overview-content">
+                    <h2>Effective Troubleshooting Approach</h2>
+                    <p>When encountering issues with Fuji Electric power semiconductors, follow a systematic approach to ensure accurate diagnosis and resolution. Proper troubleshooting saves time and prevents recurring problems.</p>
+                    
+                    <h3>Before You Begin</h3>
+                    <ul>
+                        <li>Review the application circuit design</li>
+                        <li>Check operating conditions against specifications</li>
+                        <li>Verify all connections and cooling</li>
+                        <li>Document symptoms and conditions prior to failure</li>
+                        <li>Have the device's date code and lot number available</li>
+                    </ul>
+                    
+                    <h3>Safety First</h3>
+                    <p>Always disconnect power and discharge capacitors before any inspection. Use appropriate PPE and follow electrical safety procedures.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="problem-categories">
+            <div class="container">
+                <h2>Common Problem Categories</h2>
+                <div class="category-grid">
+                    <div class="category-card">
+                        <div class="icon">🔥</div>
+                        <h3>Thermal Issues</h3>
+                        <p>Overheating, thermal runaway, and cooling problems</p>
+                        <a href="#thermal-issues" class="btn btn-primary">View Details</a>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="icon">⚡</div>
+                        <h3>Electrical Stress</h3>
+                        <p>Over-current, over-voltage, and switching issues</p>
+                        <a href="#electrical-stress" class="btn btn-primary">View Details</a>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="icon">🔧</div>
+                        <h3>Mechanical Issues</h3>
+                        <p>Mounting, connection, and vibration problems</p>
+                        <a href="#mechanical-issues" class="btn btn-primary">View Details</a>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="icon">📊</div>
+                        <h3>Performance Issues</h3>
+                        <p>Efficiency, noise, and performance degradation</p>
+                        <a href="#performance-issues" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="thermal-issues" class="troubleshooting-section">
+            <div class="container">
+                <h2>Thermal Issues</h2>
+                
+                <div class="troubleshooting-guide">
+                    <div class="problem">
+                        <h3>Problem: Device Overheating</h3>
+                        <div class="solution">
+                            <h4>Cause Analysis:</h4>
+                            <ul>
+                                <li>Insufficient cooling (wrong heatsink, inadequate airflow)</li>
+                                <li>Incorrect mounting torque or thermal interface material</li>
+                                <li>Operating beyond rated current or power dissipation</li>
+                                <li>High ambient temperature</li>
+                                <li>Poor thermal interface (missing paste, wrong material)</li>
+                            </ul>
+                            
+                            <h4>Solution Steps:</h4>
+                            <ol>
+                                <li>Measure actual case temperature vs. allowed maximum</li>
+                                <li>Verify thermal path from device to environment</li>
+                                <li>Check heatsink specifications against calculated requirements</li>
+                                <li>Verify proper mounting torque and thermal interface</li>
+                                <li>Check actual current/voltage vs. rated values</li>
+                                <li>Review thermal resistance calculations</li>
+                            </ol>
+                            
+                            <h4>Prevention:</h4>
+                            <p>Implement thermal monitoring, derate appropriately, use adequate cooling, and conduct thermal modeling during design.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="problem">
+                        <h3>Problem: Thermal Cycling Failure</h3>
+                        <div class="solution">
+                            <h4>Cause Analysis:</h4>
+                            <ul>
+                                <li>Rapid temperature changes causing thermal fatigue</li>
+                                <li>Large temperature differences between hot spots</li>
+                                <li>Material mismatch coefficients of thermal expansion</li>
+                            </ul>
+                            
+                            <h4>Solution Steps:</h4>
+                            <ol>
+                                <li>Implement soft-start to reduce thermal shock</li>
+                                <li>Add precharge circuits where appropriate</li>
+                                <li>Ensure gradual thermal ramping during operation</li>
+                                <li>Verify thermal design handles expected duty cycle</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="electrical-stress" class="troubleshooting-section">
+            <div class="container">
+                <h2>Electrical Stress Issues</h2>
+                
+                <div class="troubleshooting-guide">
+                    <div class="problem">
+                        <h3>Problem: Short-Circuit Damage</h3>
+                        <div class="solution">
+                            <h4>Cause Analysis:</h4>
+                            <ul>
+                                <li>Load short circuits</li>
+                                <li>Desaturation protection not properly configured</li>
+                                <li>Slow turn-off causing excessive short-circuit current</li>
+                                <li>Gate pulses applied during reverse bias</li>
+                            </ul>
+                            
+                            <h4>Solution Steps:</h4>
+                            <ol>
+                                <li>Check desaturation circuit functionality</li>
+                                <li>Verify appropriate gate resistor values</li>
+                                <li>Review dead-time settings</li>
+                                <li>Inspect load for shorts before replacement</li>
+                                <li>Check gate drive circuit for issues</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="problem">
+                        <h3>Problem: Over-Voltage Stress</h3>
+                        <div class="solution">
+                            <h4>Cause Analysis:</h4>
+                            <ul>
+                                <li>Inductive switching transients</li>
+                                <li>Inadequate snubber circuits</li>
+                                <li>Input/output capacitor issues</li>
+                                <li>Fast turn-off causing high voltage spikes</li>
+                            </ul>
+                            
+                            <h4>Solution Steps:</h4>
+                            <ol>
+                                <li>Implement or improve RC snubber circuits</li>
+                                <li>Verify proper bypass capacitors</li>
+                                <li>Optimize gate resistance to balance losses and ringing</li>
+                                <li>Check PCB layout for inductance issues</li>
+                                <li>Verify clamping circuits if used</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="mechanical-issues" class="troubleshooting-section">
+            <div class="container">
+                <h2>Mechanical Issues</h2>
+                
+                <div class="troubleshooting-guide">
+                    <div class="problem">
+                        <h3>Problem: Mounting Issues</h3>
+                        <div class="solution">
+                            <h4>Cause Analysis:</h4>
+                            <ul>
+                                <li>Incorrect mounting torque</li>
+                                <li>Poor thermal interface material</li>
+                                <li>Uneven pressure distribution</li>
+                                <li>Warped heatsink surface</li>
+                            </ul>
+                            
+                            <h4>Solution Steps:</h4>
+                            <ol>
+                                <li>Follow manufacturer's torque specifications</li>
+                                <li>Use proper thermal interface material</li>
+                                <li>Ensure flat mounting surface (flatness <0.1mm)</li>
+                                <li>Apply even pressure across the module</li>
+                                <li>Use proper mounting hardware</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="performance-issues" class="troubleshooting-section">
+            <div class="container">
+                <h2>Performance Issues</h2>
+                
+                <div class="troubleshooting-guide">
+                    <div class="problem">
+                        <h3>Problem: Lower Than Expected Efficiency</h3>
+                        <div class="solution">
+                            <h4>Cause Analysis:</h4>
+                            <ul>
+                                <li>Higher than expected switching losses</li>
+                                <li>Excessive conduction losses</li>
+                                <li>Suboptimal switching frequency for device selection</li>
+                                <li>Issues with gate drive</li>
+                            </ul>
+                            
+                            <h4>Solution Steps:</h4>
+                            <ol>
+                                <li>Verify switching frequency vs. device optimization</li>
+                                <li>Check gate drive voltage and resistance</li>
+                                <li>Review current derating vs. actual operation</li>
+                                <li>Measure actual losses with power analyzer</li>
+                                <li>Consider alternative device for this application</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="diagnostic-tools">
+            <div class="container">
+                <h2>Diagnostic Tools and Techniques</h2>
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <h3>Oscilloscope Analysis</h3>
+                        <p>Measure voltage/current waveforms to identify switching transients and anomalies</p>
+                        <ul>
+                            <li>Gate-emitter voltage for proper drive</li>
+                            <li>Collector-emitter voltage for saturation</li>
+                            <li>Current waveforms for symmetry</li>
+                            <li>Identify ringing and oscillation</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <h3>Thermal Imaging</h3>
+                        <p>Visualize heat distribution to identify hotspots and cooling issues</p>
+                        <ul>
+                            <li>Hotspot identification</li>
+                            <li>Cooling effectiveness</li>
+                            <li>Heat distribution uniformity</li>
+                            <li>Thermal interface quality</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <h3>IV Curve Tracer</h3>
+                        <p>Characterize device electrical properties in test conditions</p>
+                        <ul>
+                            <li>Static IV characteristics</li>
+                            <li>Leakage current measurement</li>
+                            <li>Comparison with nominal curves</li>
+                            <li>Fault localization</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="preventive-maintenance">
+            <div class="container">
+                <h2>Preventive Maintenance</h2>
+                <div class="maintenance-grid">
+                    <div class="maintenance-card">
+                        <h3>Regular Inspections</h3>
+                        <p>Periodic visual and electrical inspection to prevent failures</p>
+                        <ul>
+                            <li>Visual inspection of connections</li>
+                            <li>Thermal imaging of hot spots</li>
+                            <li>Cleaning of heatsinks and cooling fins</li>
+                            <li>Inspection of thermal interface materials</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="maintenance-card">
+                        <h3>Performance Monitoring</h3>
+                        <p>Track performance parameters over time to predict issues</p>
+                        <ul>
+                            <li>Temperature trends</li>
+                            <li>Current capacity</li>
+                            <li>Efficiency changes</li>
+                            <li>Operating parameter consistency</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="maintenance-card">
+                        <h3>Environmental Controls</h3>
+                        <p>Maintain proper environmental conditions for reliability</p>
+                        <ul>
+                            <li>Humidity control</li>
+                            <li>Contamination prevention</li>
+                            <li>Temperature management</li>
+                            <li>Proper ventilation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="support-section">
+            <div class="container">
+                <h2>Need Further Technical Support?</h2>
+                <div class="support-content">
+                    <p>If you encounter issues not covered in this troubleshooting guide, our Field Application Engineers (FAEs) can assist you with:</p>
+                    <ul>
+                        <li>On-site failure analysis</li>
+                        <li>Circuit design review</li>
+                        <li>Custom solution development</li>
+                        <li>Specialized testing and validation</li>
+                        <li>Training for your technical team</li>
+                    </ul>
+                    <a href="../../../contact/index.html" class="btn btn-primary">Contact Technical Support</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>LiTong Group</h3>
+                    <p>Authorized distributor of Fuji Electric products</p>
+                    <p>Providing technical support and solutions worldwide</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../../../products/index.html">Products</a></li>
+                        <li><a href="../../../solutions/index.html">Solutions</a></li>
+                        <li><a href="../../index.html">Support</a></li>
+                        <li><a href="../../../news/index.html">News</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Support Resources</h4>
+                    <ul>
+                        <li><a href="../selection-guides/index.html">Selection Guides</a></li>
+                        <li><a href="../application-notes/index.html">Application Notes</a></li>
+                        <li><a href="index.html">Troubleshooting</a></li>
+                        <li><a href="../new-products/index.html">New Products</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li>WhatsApp: +86 15013702378</li>
+                        <li>WeChat: +86 18612518271</li>
+                        <li>Email: info@elec-distributor.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 LiTong Group. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#">LinkedIn</a>
+                    <a href="#">Twitter</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../../js/main.js"></script>
+</body>
+</html>

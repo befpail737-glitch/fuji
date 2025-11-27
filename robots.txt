@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Prevent crawling of private directories
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /private/
+Disallow: /js/*.js$  # Don't index JavaScript files directly
+Disallow: /css/*.css$  # Don't index CSS files directly
+Disallow: /images/
+Disallow: /svg/
+
+# Crawl-delay to be respectful to the server
+Crawl-delay: 5
+
+# Sitemap location
+Sitemap: https://fuji.elec-distributor.com/sitemap.xml
