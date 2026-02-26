@@ -26,3 +26,95 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* 解决方案方法网格 - 4 列布局 */
+.approach-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-xl);
+}
+
+/* 响应式：平板设备上显示 3 列 */
+@media (max-width: 1200px) {
+  .approach-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 响应式：小平板设备上显示 2 列 */
+@media (max-width: 992px) {
+  .approach-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 响应式：手机上显示 1 列 */
+@media (max-width: 576px) {
+  .approach-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.approach-item {
+  background: var(--surface-color);
+  padding: var(--spacing-2xl);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.approach-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.approach-item:hover::before {
+  transform: scaleX(1);
+}
+
+.approach-item:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: var(--shadow-lg);
+}
+
+.approach-item .feature-icon {
+  font-size: 3rem;
+  margin-bottom: var(--spacing-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: var(--primary-color-light);
+  border-radius: 50%;
+  color: var(--primary-color);
+}
+
+.approach-item h3 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--spacing);
+  color: var(--text-primary);
+}
+
+.approach-item p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  flex-grow: 1;
+}
